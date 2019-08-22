@@ -1,6 +1,19 @@
+noop:
+  image: gitlab-registry.cloudandheat.com/docker/ch-chefdk-docker/image:stable
+  script:
+  - "echo 'hi!'"
+  when: always
+  tags:
+  - docker
+  - gitlab-registry
+
 update_changelog:
   image: gitlab-registry.cloudandheat.com/docker/ch-chefdk-docker/image:stable
   only:
   - '^master$'
   script:
   - ./update_changelog
+  when: always
+  tags:
+  - docker
+  - gitlab-registry
