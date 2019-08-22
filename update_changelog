@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+if [ ! -f CHANGELOG.new ]; then
+  echo "no new changelog, nothing to do."
+  exit 0
+fi
+
+if [ ! -f CHANGELOG.md ]; then
+  echo "CHANGELOG.md does not exist, creating"
+  printf '# Changelog\n\n' > CHANGELOG.md
+fi
+
+printf '## %s\n\n' "$(date --iso-8601=date)" >> CHANGELOG.md
+cat CHANGELOG.new >> CHANGELOG.md
+git rm CHANGELOG.new
+git add CHANGELOG.md
