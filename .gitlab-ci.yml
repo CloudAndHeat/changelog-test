@@ -10,7 +10,7 @@ noop:
 update_changelog:
   image: gitlab-registry.cloudandheat.com/docker/ch-chefdk-docker/image:stable
   only:
-  - '^master$'
+  - '/^master$/'
   script:
   - ./update_changelog
   when: always
