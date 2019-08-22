@@ -17,4 +17,4 @@ git add CHANGELOG.md
 git config user.email 'notifications@gitlab.cloudandheat.com'
 git config user.name 'GitLab CI'
 git commit -m 'Update changelog after merge automatically'
-git push origin master
+git push origin HEAD:master
